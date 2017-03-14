@@ -4,11 +4,11 @@ export default class DistrictRepository {
       if(!mainObj[curr.Location.toLowerCase()]) {
         const dataProfile = {
           location: curr.Location,
-          data: { [curr.TimeFrame]: curr.Data }
+          data: { [curr.TimeFrame]: this.roundNumber(curr.Data, 3) }
         }
         mainObj[curr.Location.toLowerCase()] = dataProfile;
       } else {
-        mainObj[curr.Location.toLowerCase()].data[curr.TimeFrame] = curr.Data;
+        mainObj[curr.Location.toLowerCase()].data[curr.TimeFrame] = this.roundNumber(curr.Data, 3);
       }
       return mainObj;
     }, {});
@@ -17,18 +17,12 @@ export default class DistrictRepository {
   findByName(query) {
     return !query ? undefined : this.data[query.toLowerCase()];
   }
+
+  roundNumber(num, decimals) {
+    if(isNaN(num)) {
+      return 0
+    } else {
+      return Number(Math.round(num + 'e' + decimals) + 'e-' + decimals)
+    }
+  }
 }
-
-
-//
-//
-// {
-//   colorado: {
-//     data: [{year: 2006, data: 0.5}, {year: 2007, data: 0.4}],
-//     location: colorado
-//   },
-//   boulder: {
-//     data: [{year: 2006, data: 0.5}, {year: 2007, data: 0.4}],
-//     location: boulder
-//   }
-// }
