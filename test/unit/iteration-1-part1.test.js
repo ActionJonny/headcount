@@ -2,23 +2,23 @@ import DistrictRepository from '../../src/helper.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
 describe('DistrictRepository iteration 1 - part 1', () =>  {
-  // const district = new DistrictRepository(kinderData);
+  const district = new DistrictRepository(kinderData);
 
-  test.skip('findByName returns undefined if no arguments are provided', () => {
+  test('findByName returns undefined if no arguments are provided', () => {
     expect(district.findByName()).toBe(undefined);
   });
 
-  test.skip('findByName returns undefined when there are no matching arguments', () => {
+  test('findByName returns undefined when there are no matching arguments', () => {
     expect(district.findByName('Vikings')).toBe(undefined);
   });
 
-  test.skip('findByName returns an object with its individual district information', () => {
+  test('findByName returns an object with its individual district information', () => {
 
     expect(typeof district.findByName('Colorado')).toEqual('object');
     expect(district.findByName('Colorado').location).toEqual('Colorado');
   });
 
-  test.skip('findByName search is not case sensitive', () => {
+  test('findByName search is not case sensitive', () => {
     expect(district.findByName('ColoRAdo').location).toEqual('Colorado');
     expect(district.findByName('ACADEmY 20').location).toEqual('ACADEMY 20');
   });
