@@ -25,9 +25,11 @@ export default class DistrictRepository {
       return Number(Math.round(num + 'e' + decimals) + 'e-' + decimals)
     }
   }
-  
+
   findAllMatches(query) {
-    let dataArray = Object.values(this.data);
+    let dataArray = Object.keys(this.data).map(key => {
+      return this.data[key]
+    });
 
     if(query) {
       let filtered = dataArray.filter((curr) => {
