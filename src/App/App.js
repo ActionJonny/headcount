@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Controls from '../Controls/Controls.js';
 import Grid from '../Grid/Grid.js';
-// import DistrictRepository from '../helper';
+import DistrictRepository from '../helper';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
 
@@ -10,19 +10,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      district: []
+      district: {},
+      search: []
     }
   }
   
+  componentWillMount() {
+    this.setState({ district: new DistrictRepository(kinderData) })
+  }
+  
   componentDidMount() {
-    this.dataHelper(kinderData);
+    this.setState({ search: this.state.district.findAllMatches() })
   }
   
   render() {
     return (
       <div>
+        <h1>BodyCount</h1>
         <Controls />
-        <Grid district={this.state.district}/>
+        <Grid search={this.state.search}/>
+        
       </div>
     );
   }
