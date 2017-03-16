@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Card = ({ title, data }) =>
-(
-  <article>
-    <p>{title}</p>
-    <p>{data}</p>
-  </article>
-)
+class Card extends Component {
+  constructor() {
+    super();
+  }
+  render() {
+    const { stats } = this.props;
+    const cardData = Object.keys(stats).map((year, index) => {
+      return (
+        <li key={index}>{year}: {stats[year]}</li>
+      )
+    })
+    return (
+      <div className="distCard">
+        <h4 className="districtName">{this.props.district}</h4>
+        <ul>{ cardData }</ul>
+      </div>
+    )
+  }
+}
 
 export default Card;
