@@ -26,8 +26,10 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h1>BodyCount</h1>
         <Controls />
         <Grid search={this.state.search}/>
+        
       </div>
     );
   }

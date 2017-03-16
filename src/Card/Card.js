@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 class Card extends Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
   render() {
     const { stats } = this.props;
     const cardData = Object.keys(stats).map((year, index) => {
