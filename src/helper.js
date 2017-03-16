@@ -14,6 +14,8 @@ export default class DistrictRepository {
     }, {});
   }
 
+
+
   findByName(query) {
     return !query ? undefined : this.data[query.toLowerCase()];
   }
@@ -27,14 +29,14 @@ export default class DistrictRepository {
   }
 
   findAllMatches(query) {
-    let dataArray = Object.keys(this.data).map(key => {
+    const dataArray = Object.keys(this.data).map(key => {
       return this.data[key]
     });
 
     if(query) {
-      let filtered = dataArray.filter((curr) => {
-        let lowerCaseLocation = curr.location.toLowerCase();
-        let lowerCaseQuery = query.toLowerCase();
+      const filtered = dataArray.filter((curr) => {
+        const lowerCaseLocation = curr.location.toLowerCase();
+        const lowerCaseQuery = query.toLowerCase();
         return lowerCaseLocation.includes(lowerCaseQuery);
       });
       return filtered;
