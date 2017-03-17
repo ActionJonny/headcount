@@ -37,7 +37,7 @@ describe('Card', () =>  {
     expect(card.find('.bad').length).toBe(4)
   })
 
-  it('each listed item should have a className of "bad"', () => {
+  it('each listed item should have a className of "good"', () => {
     const wrapper = mount(<App />)
     const card = wrapper.find('.distCard').first()
     expect(card.find('.good').length).toBe(7)
