@@ -3,12 +3,12 @@ import './Controls.css';
 
 const Controls = ({searchMatch}) => {
   return (
-    <article>
+    <section>
       <input
         onChange={(e) => searchMatch(e.target.value)}
         placeholder='School District'
         type='text'/>
-    </article>
+    </section>
   );
 }
 
