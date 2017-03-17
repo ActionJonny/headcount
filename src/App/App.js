@@ -30,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>BodyCount</h1>
+        <h1>HeadCount2.0</h1>
         <Controls searchMatch={(e) => this.searchMatch(e)} />
         <Grid search={this.state.search} />
       </div>
