@@ -10,8 +10,8 @@ class Grid extends Component {
       )
     });
     return (
-      <div className="cardGrid">{ cardList }</div>
-    );
+      <section className="cardGrid">{ cardList }</section>
+    )
   }
 }
 
