@@ -11,7 +11,7 @@ class Card extends Component {
       const quality = classNames ({
         'bad': stats[year] <= 0.49,
         'good': stats[year] >= 0.5
-      })
+      });
       return (
         <li key={index} className={quality}>{year}: {stats[year]}</li>
       )

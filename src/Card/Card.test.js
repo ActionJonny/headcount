@@ -26,21 +26,20 @@ describe('Card', () =>  {
     2013: 0.703,
     2014: 0.741
   }
-  const card = new Card(data: data)
+  const card = new Card(data: data);
 
-  expect(card.props).toEqual(data)
+  expect(card.props).toEqual(data);
   });
 
   it('each listed item should have a className of "bad"', () => {
-    const wrapper = mount(<App />)
-    const card = wrapper.find('.distCard').first()
-    expect(card.find('.bad').length).toBe(4)
-  })
+    const wrapper = mount(<App />);
+    const card = wrapper.find('.distCard').first();
+    expect(card.find('.bad').length).toBe(4);
+  });
 
   it('each listed item should have a className of "good"', () => {
-    const wrapper = mount(<App />)
-    const card = wrapper.find('.distCard').first()
-    expect(card.find('.good').length).toBe(7)
-  })
-
+    const wrapper = mount(<App />);
+    const card = wrapper.find('.distCard').first();
+    expect(card.find('.good').length).toBe(7);
+  });
 });

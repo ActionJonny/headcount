@@ -9,5 +9,4 @@ describe('Grid', () =>  {
   it('Should have a grid', () => {
     const wrapper = mount(<App />);
   });
-
 });

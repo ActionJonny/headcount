@@ -12,21 +12,20 @@ describe('Controls', () =>  {
   });
 
   it('Controls has a simulate change', () => {
-  const wrapper = mount(<App />)
-  const search  = wrapper.find('input')
-  const state = wrapper.state()
-  search.simulate('change', {target: {value: 'Col'}})
+  const wrapper = mount(<App />);
+  const search  = wrapper.find('input');
+  const state = wrapper.state();
+  search.simulate('change', {target: {value: 'Col'}});
 
-  expect(wrapper.state().search.length).toBe(2)
+  expect(wrapper.state().search.length).toBe(2);
   });
 
   it('Controls has a should not display any cards if there is not a match', () => {
-  const wrapper = mount(<App />)
-  const search  = wrapper.find('input')
-  const state = wrapper.state()
-  search.simulate('change', {target: {value: 'akfjlaskfj;'}})
+  const wrapper = mount(<App />);
+  const search  = wrapper.find('input');
+  const state = wrapper.state();
+  search.simulate('change', {target: {value: 'akfjlaskfj;'}});
 
-  expect(wrapper.state().search.length).toBe(0)
+  expect(wrapper.state().search.length).toBe(0);
   });
-
 });
