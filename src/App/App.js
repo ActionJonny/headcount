@@ -24,7 +24,6 @@ class App extends Component {
   }
 
   searchMatch(e) {
-    console.log(this.state.district);
     this.setState({ search: this.state.district.findAllMatches(e) });
   }
 
