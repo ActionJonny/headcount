@@ -17,3 +17,11 @@ ul {
   font-size: 15px;
   padding-left: 5px;
 }
+
+.bad {
+  color: #757575;
+}
+
+.good {
+  color: #448AFF;
+}

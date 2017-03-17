@@ -8,7 +8,7 @@ class Grid extends Component {
       return (
         <Card key={index} district={district.location} stats={district.data} />
       )
-    })
+    });
     return (
       <section className="cardGrid">{ cardList }</section>
     )

@@ -14,8 +14,6 @@ export default class DistrictRepository {
     }, {});
   }
 
-
-
   findByName(query) {
     return !query ? undefined : this.data[query.toLowerCase()];
   }
@@ -24,13 +22,13 @@ export default class DistrictRepository {
     if(isNaN(num)) {
       return 0
     } else {
-      return Number(Math.round(num + 'e' + decimals) + 'e-' + decimals)
+      return Number(Math.round(num + 'e' + decimals) + 'e-' + decimals);
     }
   }
 
   findAllMatches(query) {
     const dataArray = Object.keys(this.data).map(key => {
-      return this.data[key]
+      return this.data[key];
     });
 
     if(query) {
