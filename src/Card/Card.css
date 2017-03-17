@@ -1,7 +1,8 @@
 .distCard {
-  width: 25%;
+  width: 30%;
   border-left: 4px solid #F44336;
   margin: 10px;
+  height: 200px;
 }
 
 h4, ul {
@@ -24,4 +25,16 @@ ul {
 
 .good {
   color: #448AFF;
+}
+
+@media (max-width: 1000px) {
+  .distCard {
+    width: 40%;
+  }
+}
+
+@media (max-width: 620px) {
+  .distCard {
+    width: 80%;
+  }
 }

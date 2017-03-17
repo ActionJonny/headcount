@@ -1,10 +1,21 @@
 h1 {
+  background-image: url('skull.png');
+  background-repeat: no-repeat;
+  background-position: 15px 30px;
   font-size: 55px;
   font-family: "Raleway 600", sans-serif;
   background-color: #F44336;
   color: #FFFFFF;
-  padding: 20px 15px 15px;
+  padding: 20px 50px 15px;
 }
+
+@media (max-width: 415px) {
+  h1 {
+    font-size: 40px;
+    background-position: 15px 23px;
+  }
+}
+
 
 /*#D32F2F
   #F44336
