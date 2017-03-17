@@ -12,10 +12,10 @@ class Card extends Component {
       )
     })
     return (
-      <div className="distCard">
+      <section className="distCard">
         <h4 className="districtName">{this.props.district}</h4>
         <ul>{ cardData }</ul>
-      </div>
+      </section>
     )
   }
 }
