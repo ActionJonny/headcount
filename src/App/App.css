@@ -6,6 +6,13 @@ h1 {
   padding: 20px 15px 15px;
 }
 
+@media (max-width: 415px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+
 /*#D32F2F
   #F44336
   #FFCDD2

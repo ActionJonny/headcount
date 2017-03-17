@@ -10,3 +10,9 @@ input {
   font-size: 20px;
   width: 300px;
 }
+
+@media (max-width: 415px) {
+  input {
+    width: 250px;
+  }
+}
