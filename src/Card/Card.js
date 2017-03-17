@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Card.css';
+import classNames from 'classnames';
 
 
 class Card extends Component {
@@ -7,8 +8,12 @@ class Card extends Component {
   render() {
     const { stats } = this.props;
     const cardData = Object.keys(stats).map((year, index) => {
+      const quality = classNames ({
+        'bad': stats[year] <= 0.49,
+        'good': stats[year] >= 0.5
+      })
       return (
-        <li key={index}>{year}: {stats[year]}</li>
+        <li key={index} className={quality}>{year}: {stats[year]}</li>
       )
     });
     
