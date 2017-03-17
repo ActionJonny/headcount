@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
+import './Grid.css';
 
 class Grid extends Component {
   render() {
