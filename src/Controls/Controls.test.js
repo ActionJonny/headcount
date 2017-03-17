@@ -4,7 +4,6 @@ import Controls from './Controls'
 import App from '../App/App'
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
-
 describe('Controls', () =>  {
 
   it('Controls is an input field', () => {
@@ -19,6 +18,15 @@ describe('Controls', () =>  {
   search.simulate('change', {target: {value: 'Col'}})
 
   expect(wrapper.state().search.length).toBe(2)
+  });
+
+  it('Controls has a should not display any cards if there is not a match', () => {
+  const wrapper = mount(<App />)
+  const search  = wrapper.find('input')
+  const state = wrapper.state()
+  search.simulate('change', {target: {value: 'akfjlaskfj;'}})
+
+  expect(wrapper.state().search.length).toBe(0)
   });
 
 });

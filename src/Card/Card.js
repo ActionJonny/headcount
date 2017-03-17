@@ -16,7 +16,7 @@ class Card extends Component {
         <li key={index} className={quality}>{year}: {stats[year]}</li>
       )
     });
-    
+
     return (
       <section className="distCard">
         <h4 className="districtName">{this.props.district}</h4>
