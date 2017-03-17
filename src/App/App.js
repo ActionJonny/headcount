@@ -16,16 +16,16 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.setState({ district: new DistrictRepository(kinderData) })
+    this.setState({ district: new DistrictRepository(kinderData) });
   }
 
   componentDidMount() {
-    this.setState({ search: this.state.district.findAllMatches() })
+    this.setState({ search: this.state.district.findAllMatches() });
   }
 
   searchMatch(e) {
     console.log(this.state.district);
-    this.setState({ search: this.state.district.findAllMatches(e) })
+    this.setState({ search: this.state.district.findAllMatches(e) });
   }
 
   render() {

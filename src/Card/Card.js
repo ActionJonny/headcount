@@ -10,13 +10,14 @@ class Card extends Component {
       return (
         <li key={index}>{year}: {stats[year]}</li>
       )
-    })
+    });
+    
     return (
       <div className="distCard">
         <h4 className="districtName">{this.props.district}</h4>
         <ul>{ cardData }</ul>
       </div>
-    )
+    );
   }
 }
 
