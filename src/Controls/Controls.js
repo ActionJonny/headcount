@@ -1,32 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Controls.css';
 
-class Controls extends Component {
-  constructor() {
-    super();
-    this.state = {
-      text: ''
-    }
-  }
-
-
-  render() {
-    return (
-      <article>
-        <input 
-          value={this.state.text}
-          onChange={(e) => 
-            this.setState({
-              text: e.target.value
-            })
-          } 
-          placeholder='School District' 
-          type='text'
-        />
-      <button onClick={()=> alert(this.state.text)}>Search</button>
-      </article>
-    );
-  }
+const Controls = ({searchMatch}) => {
+  return (
+    <article>
+      <input
+        onChange={(e) => searchMatch(e.target.value)}
+        placeholder='School District'
+        type='text'/>
+    </article>
+  );
 }
 
 export default Controls;

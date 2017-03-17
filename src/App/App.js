@@ -11,25 +11,29 @@ class App extends Component {
     super(props);
     this.state = {
       district: {},
-      search: []
+      search: [],
     }
   }
-  
+
   componentWillMount() {
     this.setState({ district: new DistrictRepository(kinderData) })
   }
-  
+
   componentDidMount() {
     this.setState({ search: this.state.district.findAllMatches() })
   }
-  
+
+  searchMatch(e) {
+    console.log(this.state.district);
+    this.setState({ search: this.state.district.findAllMatches(e) })
+  }
+
   render() {
     return (
       <div>
         <h1>BodyCount</h1>
-        <Controls />
-        <Grid search={this.state.search}/>
-        
+        <Controls searchMatch={(e) => this.searchMatch(e)} />
+        <Grid search={this.state.search} />
       </div>
     );
   }

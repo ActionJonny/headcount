@@ -3,9 +3,7 @@ import './Card.css';
 
 
 class Card extends Component {
-  // constructor() {
-  //   super();
-  // }
+
   render() {
     const { stats } = this.props;
     const cardData = Object.keys(stats).map((year, index) => {
